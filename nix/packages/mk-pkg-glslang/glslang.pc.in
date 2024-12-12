@@ -1,0 +1,10 @@
+prefix=${PREFIX}
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: glslang
+Description: OpenGL and OpenGL ES shader front end and validator
+Version: ${VERSION}
+Libs: -L${libdir} -lglslang -lpthread
+Cflags: -I${includedir}

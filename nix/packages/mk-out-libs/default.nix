@@ -48,6 +48,8 @@ if arch != archs.universal then
     fribidi = callPackage ../mk-pkg-fribidi/default.nix { };
     freetype = callPackage ../mk-pkg-freetype/default.nix { };
     libpng = callPackage ../mk-pkg-libpng/default.nix { };
+    libplacebo = callPackage ../mk-pkg-libplacebo/default.nix { };
+    moltenvk = callPackage ../mk-pkg-moltenvk/default.nix { };
     libvpx = callPackage ../mk-pkg-libvpx/default.nix { };
     libx264 = callPackage ../mk-pkg-libx264/default.nix { };
 
@@ -71,6 +73,9 @@ if arch != archs.universal then
         fribidi
         freetype
         libpng
+        # TODO: create a new flavor for vulkan build
+        libplacebo
+        moltenvk
       ]
       ++ pkgs.lib.optionals (variant == variants.video && flavor == flavors.encodersgpl) [
         libvpx

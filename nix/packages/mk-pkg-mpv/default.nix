@@ -26,6 +26,8 @@ let
   ffmpeg = callPackage ../mk-pkg-ffmpeg/default.nix { };
   uchardet = callPackage ../mk-pkg-uchardet/default.nix { };
   libass = callPackage ../mk-pkg-libass/default.nix { };
+  libplacebo = callPackage ../mk-pkg-libplacebo/default.nix { };
+  moltenvk = callPackage ../mk-pkg-moltenvk/default.nix { };
 
   nativeBuildInputs = [
     pkgs.meson
@@ -62,6 +64,7 @@ let
   };
 in
 
+# TODO: add a new flavor for vulkan build (libplacebo, moltenvk)
 pkgs.stdenvNoCC.mkDerivation {
   name = "${pname}-${os}-${arch}-${variant}-${version}";
   pname = pname;
@@ -75,6 +78,8 @@ pkgs.stdenvNoCC.mkDerivation {
     ++ pkgs.lib.optionals (variant == "video") [
       uchardet
       libass
+      libplacebo
+      moltenvk
     ];
   configurePhase = ''
     DISABLE_ALL_OPTIONS=(
@@ -147,6 +152,7 @@ pkgs.stdenvNoCC.mkDerivation {
       -Dgl-x11=disabled `# OpenGL X11/GLX (deprecated/legacy)`
       -Djpeg=disabled `# JPEG support`
       -Dlibplacebo=disabled `# libplacebo support`
+      -Dlibplacebo-next=disabled `# libplacebo-next support`
       -Drpi=disabled `# Raspberry Pi support`
       -Dsdl2-video=disabled `# SDL2 video output`
       -Dshaderc=disabled `# libshaderc SPIR-V compiler`
@@ -209,6 +215,9 @@ pkgs.stdenvNoCC.mkDerivation {
       `# video output features`
       -Dgl=enabled `# OpenGL context support`
       -Dplain-gl=enabled `# OpenGL without platform-specific code (e.g. for libmpv)`
+      -Dlibplacebo=enabled `# libplacebo support`
+      -Dlibplacebo-next=enabled `# libplacebo-next support`
+      -Dvulkan=enabled `# Vulkan context support`
     )
 
     MACOS_OPTIONS=(

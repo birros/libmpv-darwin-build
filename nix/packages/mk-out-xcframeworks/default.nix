@@ -24,7 +24,8 @@ let
     if os == oses.ios then
       [
         (callPackage ../mk-out-frameworks/default.nix { os = oses.ios; })
-        (callPackage ../mk-out-frameworks/default.nix { os = oses.iossimulator; })
+        # TODO: while testing vulkan we drop iossimulator support
+        # (callPackage ../mk-out-frameworks/default.nix { os = oses.iossimulator; })
       ]
     else if os == oses.macos then
       [

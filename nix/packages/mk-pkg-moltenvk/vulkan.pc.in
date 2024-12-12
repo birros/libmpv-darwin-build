@@ -1,0 +1,10 @@
+prefix=${PREFIX}
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: vulkan
+Description: MoltenVK
+Version: ${VERSION}
+Libs: -L${libdir} -lMoltenVK
+Cflags: -I${includedir}

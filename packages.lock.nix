@@ -24,6 +24,11 @@
     url = "https://github.com/fribidi/fribidi/releases/download/v1.0.13/fribidi-1.0.13.tar.xz";
     sha256 = "7fa16c80c81bd622f7b198d31356da139cc318a63fc7761217af4130903f54a2";
   };
+  glslang = {
+    version = "12.2.0";
+    url = "https://github.com/KhronosGroup/glslang/archive/refs/tags/12.2.0.tar.gz";
+    sha256 = "870d17030fda7308c1521fb2e01a9e93cbe4b130bc8274e90d00e127432ab6f6";
+  };
   harfbuzz = {
     version = "8.1.1";
     url = "https://github.com/harfbuzz/harfbuzz/archive/8.1.1.tar.gz";
@@ -38,6 +43,11 @@
     version = "1.3.5";
     url = "https://github.com/xiph/ogg/releases/download/v1.3.5/libogg-1.3.5.tar.gz";
     sha256 = "0eb4b4b9420a0f51db142ba3f9c64b333f826532dc0f48c6410ae51f4799b664";
+  };
+  libplacebo = {
+    version = "5.264.1";
+    url = "https://code.videolan.org/videolan/libplacebo/-/archive/v5.264.1/libplacebo-v5.264.1.tar.bz2";
+    sha256 = "99ebcf90f3d3c6c4e5b9364091575b9b75d5a1a7d2356a60d8cf67d4fd93b5da";
   };
   libpng = {
     version = "1.6.40";
@@ -73,6 +83,16 @@
     version = "3.4.1";
     url = "https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v3.4.1.tar.gz";
     sha256 = "a420fcf7103e54e775c383e3751729b8fb2dcd087f6165befd13f28315f754f5";
+  };
+  moltenvk-prebuilt = {
+    version = "1.2.4"; # Vulkan SDK 1.3.250
+    url = "https://github.com/KhronosGroup/MoltenVK/releases/download/v1.2.4/MoltenVK-all.tar";
+    sha256 = "e4cc09462395f954f19e4017189400967baea0ca04745a3ae227bdcded707146";
+  };
+  vulkansdk-linux = {
+    version = "1.3.250.1";
+    url = "https://sdk.lunarg.com/sdk/download/1.3.250.1/linux/vulkansdk-linux-x86_64-1.3.250.1.tar.gz";
+    sha256 = "29047cf5fca5001f9eee7384422404fd470950d961e3668ea2c5c5c1adee4b74";
   };
   mpv = {
     version = "0.36.0";
